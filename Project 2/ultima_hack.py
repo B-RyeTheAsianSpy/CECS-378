@@ -1,3 +1,10 @@
+"""
+Name:       Brian Nguyen
+Class:      CECS 378 - Intro to Computer Security Principles
+Start Date: 3/13/19
+End Date:   
+"""
+
 import binascii
 from textwrap import wrap
 
@@ -8,23 +15,6 @@ hex_encoded = binascii.hexlify(f).decode('utf-8')
 hex_list = wrap(hex_encoded, 2)
 
 
-
-# brian_hex = hex_list[0:31]
-# shamino_hex = hex_list[32:63]
-# iolo_hex = hex_list[64:95]
-# mariah_hex = hex_list[96:127]
-# geoffrey_hex = hex_list[128:159]
-# jaana_hex = hex_list[160:191]
-# julia_hex = hex_list[192:223]
-# dupre_hex = hex_list[224:255]
-# katrina_hex = hex_list[256:287]
-# sentri_hex = hex_list[288:319]
-# gwenno_hex = hex_list[320:351]
-# johne_hex = hex_list[352:383]
-# gorn_hex = hex_list[384:415]
-# maxwell_hex = hex_list[416:447]
-# toshi_hex = hex_list[448:479]
-# saduj_hex = hex_list[480:511]
 
 def change_strength(character):
     change = input("Enter your new value: ").lower()
