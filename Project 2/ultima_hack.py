@@ -348,6 +348,8 @@ def change_experience(character):
     elif character == 16:
         hex_list[502], hex_list[503] = b, a
 
+
+
 def change_gold():
     change = input("Enter your new value (PLEASE PUT 4 DIGITS): ").lower()
     # first half
@@ -364,9 +366,7 @@ Functions for changing items
 
 def change_keys():
     change = input("Enter your new value: ").lower()
-    print(hex_list[512:600])
     hex_list[518] = change
-    print(hex_list[512:600])
 
 
 def change_gems():
@@ -391,7 +391,7 @@ def change_magic_carpets():
 
 def change_magic_axes():
     change = input("Enter your new value: ").lower()
-    hex_list[522] = change
+    hex_list[576] = change
 
 
 """
@@ -454,11 +454,6 @@ def item_menu():
     return choice
 
 
-def menu_selection():
-    s = int(input('Enter your selection: '))
-    return s
-
-
 def under_construction():
     print("\n*****UNDER CONSTRUCTION*****\n")
 
@@ -466,43 +461,56 @@ def under_construction():
 def user_interface():
     while True:
         main_menu()
-        s = menu_selection()
+        s = int(input('Enter your selection: '))
         # change character stats
         if s == 1:
             # select character
             character = character_menu()
             stat = stats_menu()
+            # 1. strength
             if stat == 1:
                 change_strength(character)
+            # 2. intelligence
             if stat == 2:
                 change_intelligence(character)
+            # 3. dexterity
             if stat == 3:
                 change_dexterity(character)
+            # 4. hp
             if stat == 4:
                 change_hp(character)
+            # 5. max hp
             if stat == 5:
                 change_max_hp(character)
+            # 6. experience
+            if stat == 6:
+                change_experience(character)
         # change character items
         if s == 2:
             item = item_menu()
+            # 1. keys
             if item == 1:
                 change_keys()
+            # 2. skull keys
             if item == 2:
                 change_skull_keys()
+            # 3. gems
             if item == 3:
                 change_gems()
+            # 4. black badges
             if item == 4:
                 change_black_badges()
+            # 5. magic carpets
             if item == 5:
                 change_magic_carpets()
+            # 6. magic axes
             if item == 6:
-                under_construction()
+                change_magic_axes()
+            # 7. gold
             if item == 7:
                 change_gold()
         if s == 3:
             break
-        if s == 4:
-            print(hex_list)
 
 
 def main():
