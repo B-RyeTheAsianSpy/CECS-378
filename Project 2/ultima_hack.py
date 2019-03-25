@@ -2,18 +2,27 @@
 Name:       Brian Nguyen
 Class:      CECS 378 - Intro to Computer Security Principles
 Start Date: 3/13/19
-End Date:   
+End Date:   3/24/19
 """
+
 
 import binascii
 from textwrap import wrap
 
+# location of save file
 location = "C:\\OLDGAMES\\ultima\\SAVED.GAM"
 f = open(location, 'rb').read()
-print(f)
+# removes all special characters and returns only the letters and numbers
 hex_encoded = binascii.hexlify(f).decode('utf-8')
+# combines two characters and appends them to a list
 hex_list = wrap(hex_encoded, 2)
 
+
+"""
+
+Functions for changing the character stats
+
+"""
 
 
 def change_strength(character):
@@ -180,22 +189,16 @@ def change_hp(character):
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
     # 1. Brian
     if character == 1:
-        print(hex_list[0:31])
         hex_list[18], hex_list[19] = b, a
-        print(hex_list[0:31])
     # 2. Shamino
     elif character == 2:
         hex_list[50], hex_list[51] = b, a
     # 3. Iolo
     elif character == 3:
-        print(hex_list[64:95])
         hex_list[82], hex_list[83] = b, a
-        print(hex_list[64:95])
     # 4. Mariah
     elif character == 4:
-        print(hex_list[64:95])
         hex_list[114], hex_list[115] = b, a
-        print(hex_list[64:95])
     # 5. Geoffrey
     elif character == 5:
         hex_list[146], hex_list[147] = b, a
@@ -242,22 +245,17 @@ def change_max_hp(character):
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
     # 1. Brian
     if character == 1:
-        print(hex_list[0:31])
+
         hex_list[20], hex_list[21] = b, a
-        print(hex_list[0:31])
     # 2. Shamino
     elif character == 2:
         hex_list[52], hex_list[53] = b, a
     # 3. Iolo
     elif character == 3:
-        print(hex_list[64:95])
         hex_list[84], hex_list[85] = b, a
-        print(hex_list[64:95])
     # 4. Mariah
     elif character == 4:
-        print(hex_list[64:95])
         hex_list[116], hex_list[118] = b, a
-        print(hex_list[64:95])
     # 5. Geoffrey
     elif character == 5:
         hex_list[148], hex_list[149] = b, a
@@ -303,22 +301,16 @@ def change_experience(character):
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
     # 1. Brian
     if character == 1:
-        print(hex_list[0:31])
         hex_list[22], hex_list[23] = b, a
-        print(hex_list[0:31])
     # 2. Shamino
     elif character == 2:
         hex_list[54], hex_list[55] = b, a
     # 3. Iolo
     elif character == 3:
-        print(hex_list[64:95])
         hex_list[86], hex_list[87] = b, a
-        print(hex_list[64:95])
     # 4. Mariah
     elif character == 4:
-        print(hex_list[64:95])
         hex_list[118], hex_list[120] = b, a
-        print(hex_list[64:95])
     # 5. Geoffrey
     elif character == 5:
         hex_list[150], hex_list[151] = b, a
@@ -363,17 +355,60 @@ def change_gold():
     # second half
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
     hex_list[516], hex_list[517] = b, a
-    print(hex_list)
+
+
+"""
+Functions for changing items
+"""
+
+
+def change_keys():
+    change = input("Enter your new value: ").lower()
+    print(hex_list[512:600])
+    hex_list[518] = change
+    print(hex_list[512:600])
+
+
+def change_gems():
+    change = input("Enter your new value: ").lower()
+    hex_list[519] = change
+
+
+def change_skull_keys():
+    change = input("Enter your new value: ").lower()
+    hex_list[523] = change
+
+
+def change_black_badges():
+    change = input("Enter your new value: ").lower()
+    hex_list[536] = change
+
+
+def change_magic_carpets():
+    change = input("Enter your new value: ").lower()
+    hex_list[522] = change
+
+
+def change_magic_axes():
+    change = input("Enter your new value: ").lower()
+    hex_list[522] = change
+
+
+"""
+Menu functions
+"""
 
 
 def main_menu():
-    print("1.\tChange Character Stats\n"
+    print("----------------\n"
+          "1.\tChange Character Stats\n"
           "2.\tChange Character Items\n"
           "3.\tExit\n")
 
 
 def character_menu():
-    print("1.\tBrian (main character)\n"
+    print("----------------\n"
+          "1.\tBrian (main character)\n"
           "2.\tShamino\n"
           "3.\tIolo\n"
           "4.\tMariah\n"
@@ -392,21 +427,40 @@ def character_menu():
     choice = int(input("What character are you choosing? "))
     return choice
 
+
 def stats_menu():
-    print("1.\tStrength\n"
+    print("----------------\n"
+          "1.\tStrength\n"
           "2.\tIntelligence\n"
           "3.\tDexterity\n"
           "4.\tHP\n"
           "5.\tMax HP\n"
           "6.\tExperience\n"
+          )
+    choice = int(input("What stat you like to change? "))
+    return choice
+
+
+def item_menu():
+    print("----------------\n"
+          "1.\tKeys\n"
+          "2.\tSkull Keys\n"
+          "3.\tGems\n"
+          "4.\tBlack Badges\n"
+          "5.\tMagic Carpets\n"
+          "6.\tMagic Axes\n"
           "7.\tGold\n")
-    choice = int(input("What would you like to change? "))
+    choice = int(input("What item you like to change? "))
     return choice
 
 
 def menu_selection():
     s = int(input('Enter your selection: '))
     return s
+
+
+def under_construction():
+    print("\n*****UNDER CONSTRUCTION*****\n")
 
 
 def user_interface():
@@ -428,10 +482,23 @@ def user_interface():
                 change_hp(character)
             if stat == 5:
                 change_max_hp(character)
-            if stat == 7 and character == 1:
-                change_gold()
+        # change character items
         if s == 2:
-            print('\n*****UNDER CONSTRUCTION*****\n')
+            item = item_menu()
+            if item == 1:
+                change_keys()
+            if item == 2:
+                change_skull_keys()
+            if item == 3:
+                change_gems()
+            if item == 4:
+                change_black_badges()
+            if item == 5:
+                change_magic_carpets()
+            if item == 6:
+                under_construction()
+            if item == 7:
+                change_gold()
         if s == 3:
             break
         if s == 4:
@@ -439,15 +506,15 @@ def user_interface():
 
 
 def main():
-
+    print("Welcome to B-Rye's Ultima V Hacking Tool!\n"
+          "Please note that all values entered are in hexadecimal\n"
+          "and have a length of 2 unless stated otherwise.\n"
+          "Enjoy!\n")
     user_interface()
 
 
 main()
-
-print(hex_list)
-d = open(location, 'wb')
+f = open(location, 'wb')
 new = "".join(hex_list)
-print(new)
 hex_encoded = binascii.unhexlify(new)
-d.write(hex_encoded)
+f.write(hex_encoded)
