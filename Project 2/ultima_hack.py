@@ -8,15 +8,16 @@ End Date:   3/24/19
 
 import binascii
 from textwrap import wrap
+import time
 
-# location of save file
+# location of save file (on my system)
 location = "C:\\OLDGAMES\\ultima\\SAVED.GAM"
 f = open(location, 'rb').read()
 # removes all special characters and returns only the letters and numbers
 hex_encoded = binascii.hexlify(f).decode('utf-8')
 # combines two characters and appends them to a list
 hex_list = wrap(hex_encoded, 2)
-
+x = 32
 
 """
 
@@ -26,337 +27,373 @@ Functions for changing the character stats
 
 
 def change_strength(character):
+    i = 14
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     # 1. Brian
     if character == 1:
-        hex_list[14] = change
+        hex_list[i] = change
     # 2. Shamino
     elif character == 2:
-        hex_list[46] = change
+        hex_list[i + x] = change
     # 3. Iolo
     elif character == 3:
-        hex_list[78] = change
+        hex_list[i + (x * 2)] = change
     # 4. Mariah
     elif character == 4:
-        hex_list[110] = change
+        hex_list[i + (x * 3)] = change
     # 5. Geoffrey
     elif character == 5:
-        hex_list[142] = change
+        hex_list[i + (x * 4)] = change
     # 6. Jaana
     elif character == 6:
-        hex_list[174] = change
+        hex_list[i + (x * 5)] = change
     # 7. Julia
     elif character == 7:
-        hex_list[206] = change
+        hex_list[i + (x * 6)] = change
     # 8. Dupre
     elif character == 8:
-        hex_list[238] = change
+        hex_list[i + (x * 7)] = change
     # 9. Katrina
     elif character == 9:
-        hex_list[270] = change
+        hex_list[i + (x * 8)] = change
     # 10. Sentri
     elif character == 10:
-        hex_list[302] = change
+        hex_list[i + (x * 9)] = change
     # 11. Gwenno
     elif character == 11:
-        hex_list[334] = change
+        hex_list[i + (x * 10)] = change
     # 12. Johne
     elif character == 12:
-        hex_list[366] = change
+        hex_list[i + (x * 11)] = change
     # 13. Gorn
     elif character == 13:
-        hex_list[398] = change
+        hex_list[i + (x * 12)] = change
     # 14. Maxwell
     elif character == 14:
-        hex_list[430] = change
+        hex_list[i + (x * 13)] = change
     # 15. Toshi
     elif character == 15:
-        hex_list[462] = change
+        hex_list[i + (x * 14)] = change
     # 16. Saduj
     elif character == 16:
-        hex_list[494] = change
+        hex_list[i + (x * 15)] = change
+    print('Success!\n')
 
 
 def change_intelligence(character):
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
     # 1. Brian
+    i = 16
+    print('Changing...')
+    time.sleep(2)
     if character == 1:
-        hex_list[16] = change
+        hex_list[i] = change
     # 2. Shamino
     elif character == 2:
-        hex_list[48] = change
+        hex_list[i + x] = change
     # 3. Iolo
     elif character == 3:
-        hex_list[80] = change
+        hex_list[i + (x * 2)] = change
     # 4. Mariah
     elif character == 4:
-        hex_list[112] = change
+        hex_list[i + (x * 3)] = change
     # 5. Geoffrey
     elif character == 5:
-        hex_list[144] = change
+        hex_list[i + (x * 4)] = change
     # 6. Jaana
     elif character == 6:
-        hex_list[176] = change
+        hex_list[i + (x * 5)] = change
     # 7. Julia
     elif character == 7:
-        hex_list[208] = change
+        hex_list[i + (x * 6)] = change
     # 8. Dupre
     elif character == 8:
-        hex_list[240] = change
+        hex_list[i + (x * 7)] = change
     # 9. Katrina
     elif character == 9:
-        hex_list[272] = change
+        hex_list[i + (x * 8)] = change
     # 10. Sentri
     elif character == 10:
-        hex_list[304] = change
+        hex_list[i + (x * 9)] = change
     # 11. Gwenno
     elif character == 11:
-        hex_list[336] = change
+        hex_list[i + (x * 10)] = change
     # 12. Johne
     elif character == 12:
-        hex_list[368] = change
+        hex_list[i + (x * 11)] = change
     # 13. Gorn
     elif character == 13:
-        hex_list[400] = change
+        hex_list[i + (x * 12)] = change
     # 14. Maxwell
     elif character == 14:
-        hex_list[432] = change
+        hex_list[i + (x * 13)] = change
     # 15. Toshi
     elif character == 15:
-        hex_list[464] = change
+        hex_list[i + (x * 14)] = change
     # 16. Saduj
     elif character == 16:
-        hex_list[496] = change
-
+        hex_list[i + (x * 15)] = change
+    print('Success!\n')
 
 def change_dexterity(character):
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    i = 15
+    print('Changing...')
+    time.sleep(2)
     # 1. Brian
     if character == 1:
-        hex_list[15] = change
+        hex_list[i] = change
     # 2. Shamino
     elif character == 2:
-        hex_list[47] = change
+        hex_list[i + x] = change
     # 3. Iolo
     elif character == 3:
-        hex_list[79] = change
+        hex_list[i + (x * 2)] = change
     # 4. Mariah
     elif character == 4:
-        hex_list[111] = change
+        hex_list[i + (x * 3)] = change
     # 5. Geoffrey
     elif character == 5:
-        hex_list[143] = change
+        hex_list[i + (x * 4)] = change
     # 6. Jaana
     elif character == 6:
-        hex_list[175] = change
+        hex_list[i + (x * 5)] = change
     # 7. Julia
     elif character == 7:
-        hex_list[207] = change
+        hex_list[i + (x * 6)] = change
     # 8. Dupre
     elif character == 8:
-        hex_list[239] = change
+        hex_list[i + (x * 7)] = change
     # 9. Katrina
     elif character == 9:
-        hex_list[271] = change
+        hex_list[i + (x * 8)] = change
     # 10. Sentri
     elif character == 10:
-        hex_list[303] = change
+        hex_list[i + (x * 9)] = change
     # 11. Gwenno
     elif character == 11:
-        hex_list[335] = change
+        hex_list[i + (x * 10)] = change
     # 12. Johne
     elif character == 12:
-        hex_list[367] = change
+        hex_list[i + (x * 11)] = change
     # 13. Gorn
     elif character == 13:
-        hex_list[399] = change
+        hex_list[i + (x * 12)] = change
     # 14. Maxwell
     elif character == 14:
-        hex_list[431] = change
+        hex_list[i + (x * 13)] = change
     # 15. Toshi
     elif character == 15:
-        hex_list[463] = change
+        hex_list[i + (x * 14)] = change
     # 16. Saduj
     elif character == 16:
-        hex_list[495] = change
-
+        hex_list[i + (x * 15)] = change
+    print('Success!')
 
 def change_hp(character):
     change = input("Enter your new value (PLEASE PUT 4 DIGITS): ").lower()
+    while len(change) != 4:
+        change = input("Please enter again: ").lower()
     # first half
     a = change[0:len(change) // 2]
     # second half
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
+    i = 18
+    print('Changing...')
+    time.sleep(2)
     # 1. Brian
     if character == 1:
-        hex_list[18], hex_list[19] = b, a
+        hex_list[i], hex_list[i + 1] = b, a
     # 2. Shamino
     elif character == 2:
-        hex_list[50], hex_list[51] = b, a
+        hex_list[i + x], hex_list[(i + x) + 1] = b, a
     # 3. Iolo
     elif character == 3:
-        hex_list[82], hex_list[83] = b, a
+        hex_list[i + (x * 2)], hex_list[(i + (x * 2)) + 1] = b, a
     # 4. Mariah
     elif character == 4:
-        hex_list[114], hex_list[115] = b, a
+        hex_list[i + (x * 3)], hex_list[(i + (x * 3)) + 1] = b, a
     # 5. Geoffrey
     elif character == 5:
-        hex_list[146], hex_list[147] = b, a
+        hex_list[i + (x * 4)], hex_list[(i + (x * 4)) + 1] = b, a
     # 6. Jaana
     elif character == 6:
-        hex_list[178], hex_list[179] = b, a
+        hex_list[i + (x * 5)], hex_list[(i + (x * 5)) + 1] = b, a
     # 7. Julia
     elif character == 7:
-        hex_list[210], hex_list[211] = b, a
+        hex_list[i + (x * 6)], hex_list[(i + (x * 6)) + 1] = b, a
     # 8. Dupre
     elif character == 8:
-        hex_list[242], hex_list[243] = b, a
+        hex_list[i + (x * 7)], hex_list[(i + (x * 7)) + 1] = b, a
     # 9. Katrina
     elif character == 9:
-        hex_list[274], hex_list[271] = b, a
+        hex_list[i + (x * 8)], hex_list[(i + (x * 8)) + 1] = b, a
     # 10. Sentri
     elif character == 10:
-        hex_list[306], hex_list[307] = b, a
+        hex_list[i + (x * 9)], hex_list[(i + (x * 9)) + 1] = b, a
     # 11. Gwenno
     elif character == 11:
-        hex_list[338], hex_list[339] = b, a
+        hex_list[i + (x * 10)], hex_list[(i + (x * 10)) + 1] = b, a
     # 12. Johne
     elif character == 12:
-        hex_list[370], hex_list[371] = b, a
+        hex_list[i + (x * 11)], hex_list[(i + (x * 11)) + 1] = b, a
     # 13. Gorn
     elif character == 13:
-        hex_list[402], hex_list[403] = b, a
+        hex_list[i + (x * 12)], hex_list[(i + (x * 12)) + 1] = b, a
     # 14. Maxwell
     elif character == 14:
-        hex_list[434], hex_list[435] = b, a
+        hex_list[i + (x * 13)], hex_list[(i + (x * 13)) + 1] = b, a
     # 15. Toshi
     elif character == 15:
-        hex_list[466], hex_list[467] = b, a
+        hex_list[i + (x * 14)], hex_list[(i + (x * 14)) + 1] = b, a
     # 16. Saduj
     elif character == 16:
-        hex_list[498], hex_list[499] = b, a
-
+        hex_list[i + (x * 15)], hex_list[(i + (x * 15)) + 1] = b, a
+    print('Success!\n')
 
 def change_max_hp(character):
     change = input("Enter your new value (PLEASE PUT 4 DIGITS): ").lower()
+    while len(change) != 4:
+        change = input("Please enter again: ").lower()
     # first half
     a = change[0:len(change) // 2]
     # second half
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
+    i = 20
+    print('Changing...')
+    time.sleep(2)
     # 1. Brian
     if character == 1:
-
-        hex_list[20], hex_list[21] = b, a
+        hex_list[i], hex_list[i + 1] = b, a
     # 2. Shamino
     elif character == 2:
-        hex_list[52], hex_list[53] = b, a
+        hex_list[i + x], hex_list[(i + x) + 1] = b, a
     # 3. Iolo
     elif character == 3:
-        hex_list[84], hex_list[85] = b, a
+        hex_list[i + (x * 2)], hex_list[(i + (x * 2)) + 1] = b, a
     # 4. Mariah
     elif character == 4:
-        hex_list[116], hex_list[118] = b, a
+        hex_list[i + (x * 3)], hex_list[(i + (x * 3)) + 1] = b, a
     # 5. Geoffrey
     elif character == 5:
-        hex_list[148], hex_list[149] = b, a
+        hex_list[i + (x * 4)], hex_list[(i + (x * 4)) + 1] = b, a
     # 6. Jaana
     elif character == 6:
-        hex_list[180], hex_list[181] = b, a
+        hex_list[i + (x * 5)], hex_list[(i + (x * 5)) + 1] = b, a
     # 7. Julia
     elif character == 7:
-        hex_list[212], hex_list[213] = b, a
+        hex_list[i + (x * 6)], hex_list[(i + (x * 6)) + 1] = b, a
     # 8. Dupre
     elif character == 8:
-        hex_list[244], hex_list[245] = b, a
+        hex_list[i + (x * 7)], hex_list[(i + (x * 7)) + 1] = b, a
     # 9. Katrina
     elif character == 9:
-        hex_list[276], hex_list[277] = b, a
+        hex_list[i + (x * 8)], hex_list[(i + (x * 8)) + 1] = b, a
     # 10. Sentri
     elif character == 10:
-        hex_list[308], hex_list[309] = b, a
+        hex_list[i + (x * 9)], hex_list[(i + (x * 9)) + 1] = b, a
     # 11. Gwenno
     elif character == 11:
-        hex_list[340], hex_list[341] = b, a
+        hex_list[i + (x * 10)], hex_list[(i + (x * 10)) + 1] = b, a
     # 12. Johne
     elif character == 12:
-        hex_list[372], hex_list[373] = b, a
+        hex_list[i + (x * 11)], hex_list[(i + (x * 11)) + 1] = b, a
     # 13. Gorn
     elif character == 13:
-        hex_list[404], hex_list[405] = b, a
+        hex_list[i + (x * 12)], hex_list[(i + (x * 12)) + 1] = b, a
     # 14. Maxwell
     elif character == 14:
-        hex_list[436], hex_list[437] = b, a
+        hex_list[i + (x * 13)], hex_list[(i + (x * 13)) + 1] = b, a
     # 15. Toshi
     elif character == 15:
-        hex_list[468], hex_list[469] = b, a
+        hex_list[i + (x * 14)], hex_list[(i + (x * 14)) + 1] = b, a
     # 16. Saduj
     elif character == 16:
-        hex_list[500], hex_list[501] = b, a
+        hex_list[i + (x * 15)], hex_list[(i + (x * 15)) + 1] = b, a
+    print('Success!\n')
 
 def change_experience(character):
     change = input("Enter your new value (PLEASE PUT 4 DIGITS): ").lower()
+    while len(change) != 4:
+        change = input("Please enter again: ").lower()
     # first half
     a = change[0:len(change) // 2]
     # second half
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
+    i = 22
+    print('Changing...')
+    time.sleep(2)
     # 1. Brian
     if character == 1:
-        hex_list[22], hex_list[23] = b, a
+        hex_list[i], hex_list[i + 1] = b, a
     # 2. Shamino
     elif character == 2:
-        hex_list[54], hex_list[55] = b, a
+        hex_list[i + x], hex_list[(i + x) + 1] = b, a
     # 3. Iolo
     elif character == 3:
-        hex_list[86], hex_list[87] = b, a
+        hex_list[i + (x * 2)], hex_list[(i + (x * 2)) + 1] = b, a
     # 4. Mariah
     elif character == 4:
-        hex_list[118], hex_list[120] = b, a
+        hex_list[i + (x * 3)], hex_list[(i + (x * 3)) + 1] = b, a
     # 5. Geoffrey
     elif character == 5:
-        hex_list[150], hex_list[151] = b, a
+        hex_list[i + (x * 4)], hex_list[(i + (x * 4)) + 1] = b, a
     # 6. Jaana
     elif character == 6:
-        hex_list[182], hex_list[183] = b, a
+        hex_list[i + (x * 5)], hex_list[(i + (x * 5)) + 1] = b, a
     # 7. Julia
     elif character == 7:
-        hex_list[214], hex_list[215] = b, a
+        hex_list[i + (x * 6)], hex_list[(i + (x * 6)) + 1] = b, a
     # 8. Dupre
     elif character == 8:
-        hex_list[246], hex_list[247] = b, a
+        hex_list[i + (x * 7)], hex_list[(i + (x * 7)) + 1] = b, a
     # 9. Katrina
     elif character == 9:
-        hex_list[278], hex_list[279] = b, a
+        hex_list[i + (x * 8)], hex_list[(i + (x * 8)) + 1] = b, a
     # 10. Sentri
     elif character == 10:
-        hex_list[310], hex_list[311] = b, a
+        hex_list[i + (x * 9)], hex_list[(i + (x * 9)) + 1] = b, a
     # 11. Gwenno
     elif character == 11:
-        hex_list[342], hex_list[343] = b, a
+        hex_list[i + (x * 10)], hex_list[(i + (x * 10)) + 1] = b, a
     # 12. Johne
     elif character == 12:
-        hex_list[374], hex_list[375] = b, a
+        hex_list[i + (x * 11)], hex_list[(i + (x * 11)) + 1] = b, a
     # 13. Gorn
     elif character == 13:
-        hex_list[406], hex_list[407] = b, a
+        hex_list[i + (x * 12)], hex_list[(i + (x * 12)) + 1] = b, a
     # 14. Maxwell
     elif character == 14:
-        hex_list[438], hex_list[439] = b, a
+        hex_list[i + (x * 13)], hex_list[(i + (x * 13)) + 1] = b, a
     # 15. Toshi
     elif character == 15:
-        hex_list[470], hex_list[471] = b, a
+        hex_list[i + (x * 14)], hex_list[(i + (x * 14)) + 1] = b, a
     # 16. Saduj
     elif character == 16:
-        hex_list[502], hex_list[503] = b, a
-
+        hex_list[i + (x * 15)], hex_list[(i + (x * 15)) + 1] = b, a
+    print('Success!')
 
 
 def change_gold():
     change = input("Enter your new value (PLEASE PUT 4 DIGITS): ").lower()
+    while len(change) != 4:
+        change = input("Please enter again: ").lower()
     # first half
     a = change[0:len(change) // 2]
     # second half
     b = change[len(change) // 2 if len(change) % 2 == 0 else ((len(change) // 2) + 1):]
+    print('Changing...')
+    time.sleep(2)
     hex_list[516], hex_list[517] = b, a
+    print('Success!\n')
 
 
 """
@@ -366,32 +403,62 @@ Functions for changing items
 
 def change_keys():
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     hex_list[518] = change
+    print('Success!')
 
 
 def change_gems():
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     hex_list[519] = change
+    print('Success!')
 
 
 def change_skull_keys():
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     hex_list[523] = change
+    print('Success!')
 
 
 def change_black_badges():
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     hex_list[536] = change
+    print('Success!')
 
 
 def change_magic_carpets():
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     hex_list[522] = change
+    print('Success!')
 
 
 def change_magic_axes():
     change = input("Enter your new value: ").lower()
+    while len(change) != 2:
+        change = input("Please enter again: ").lower()
+    print('Changing...')
+    time.sleep(2)
     hex_list[576] = change
+    print('Success!\n')
 
 
 """
@@ -404,6 +471,10 @@ def main_menu():
           "1.\tChange Character Stats\n"
           "2.\tChange Character Items\n"
           "3.\tExit\n")
+    choice = int(input('Enter your selection: '))
+    while choice < 1 or choice > 3:
+        choice = int(input("Please try again: "))
+    return choice
 
 
 def character_menu():
@@ -423,8 +494,11 @@ def character_menu():
           "13.\tGorn\n"
           "14.\tMaxwell\n"
           "15.\tToshi\n"
-          "16.\tSaduj\n")
+          "16.\tSaduj\n"
+          )
     choice = int(input("What character are you choosing? "))
+    while choice < 1 or choice > 16:
+        choice = int(input("Please try again: "))
     return choice
 
 
@@ -438,6 +512,8 @@ def stats_menu():
           "6.\tExperience\n"
           )
     choice = int(input("What stat you like to change? "))
+    while choice < 1 or choice > 6:
+        choice = int(input("Please try again: "))
     return choice
 
 
@@ -451,17 +527,20 @@ def item_menu():
           "6.\tMagic Axes\n"
           "7.\tGold\n")
     choice = int(input("What item you like to change? "))
+    while choice < 1 or choice > 7:
+        choice = int(input("Please try again: "))
     return choice
 
 
-def under_construction():
-    print("\n*****UNDER CONSTRUCTION*****\n")
+def return_main_menu():
+    print("Returning to main menu...\n")
+    time.sleep(3)
+    return user_interface()
 
 
 def user_interface():
     while True:
-        main_menu()
-        s = int(input('Enter your selection: '))
+        s = main_menu()
         # change character stats
         if s == 1:
             # select character
